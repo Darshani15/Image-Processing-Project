@@ -9,9 +9,46 @@ st.markdown(
         .stApp {
             background-color: #D0F4F4;
         }
-        .stFileUploader label, label {
-            color: #004C4C !important;
+        /* Style file uploader */
+        div.stFileUploader > label {
+            background-color: #4DB6AC;
+            color: #004C4C;
             font-weight: bold;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            display: block;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+        div.stFileUploader > label:hover {
+            background-color: #26A69A;
+            color: #FFFFFF;
+        }
+        /* Center section text */
+        .title-section {
+            text-align:center; 
+            background-color:#B2DFDB; 
+            padding:20px; 
+            border-radius:10px;
+        }
+        .title-section h1 {
+            color:#006666;
+        }
+        .title-section p {
+            font-size:18px;
+            color:#004C4C;
+        }
+        /* Processed image section */
+        .processed-section {
+            text-align:center; 
+            background-color:#B2DFDB; 
+            padding:10px; 
+            border-radius:8px;
+            margin-top:20px;
+        }
+        .processed-section h3 {
+            color:#006666;
         }
     </style>
     """,
@@ -20,17 +57,15 @@ st.markdown(
 
 st.markdown(
     """
-    <div style="text-align:center; background-color:#B2DFDB; padding:20px; border-radius:10px;">
-        <h1 style="color:#006666;">🎨 Pic Perfect</h1>
-        <p style="font-size:18px; color:#004C4C;">
-            Upload,edit & enhance your images with ease🌿
-        </p>
+    <div class="title-section">
+        <h1>🎨 Pic Perfect</h1>
+        <p>Upload, edit & enhance your images with ease 🌿</p>
     </div>
     """,
     unsafe_allow_html=True
 )
 
-uploaded_file = st.file_uploader("📸 Upload an image", type=["jpg", "jpeg", "png"])
+uploaded_file = st.file_uploader("📂 Drag & Drop or Browse your image", type=["jpg", "jpeg", "png"], accept_multiple_files=False)
 
 if uploaded_file:
     image = Image.open(uploaded_file)
@@ -43,10 +78,8 @@ if uploaded_file:
 
     enhancer = ImageEnhance.Brightness(image)
     img = enhancer.enhance(brightness)
-
     enhancer = ImageEnhance.Contrast(img)
     img = enhancer.enhance(contrast)
-
     enhancer = ImageEnhance.Sharpness(img)
     img = enhancer.enhance(sharpness)
 
@@ -55,8 +88,8 @@ if uploaded_file:
 
     st.markdown(
         """
-        <div style="text-align:center; background-color:#B2DFDB; padding:10px; border-radius:8px;">
-            <h3 style="color:#006666;">↻ ⏳ Processed Image 🔜</h3>
+        <div class="processed-section">
+            <h3>↻ ⏳ Processed Image 🔜</h3>
         </div>
         """,
         unsafe_allow_html=True
@@ -72,4 +105,3 @@ if uploaded_file:
             file_name="processed.png",
             mime="image/png"
         )
-
