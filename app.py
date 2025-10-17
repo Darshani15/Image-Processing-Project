@@ -5,9 +5,24 @@ st.set_page_config(page_title="🎨 Pic Perfect", page_icon="✨")
 
 st.markdown(
     """
-    <div style="text-align:center; background-color:#E8F5E9; padding:20px; border-radius:10px;">
-        <h1 style="color:#2E7D32;">🎨 Pic Perfect</h1>
-        <p style="font-size:18px; color:#1B5E20;">
+    <style>
+        .stApp {
+            background-color: #D0F4F4;
+        }
+        .stFileUploader label, label {
+            color: #004C4C !important;
+            font-weight: bold;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.markdown(
+    """
+    <div style="text-align:center; background-color:#B2DFDB; padding:20px; border-radius:10px;">
+        <h1 style="color:#006666;">🎨 Pic Perfect</h1>
+        <p style="font-size:18px; color:#004C4C;">
             Upload, edit & enhance your images with ease 🌿
         </p>
     </div>
@@ -40,8 +55,8 @@ if uploaded_file:
 
     st.markdown(
         """
-        <div style="text-align:center; background-color:#C8E6C9; padding:10px; border-radius:8px;">
-            <h3 style="color:#1B5E20;">↻ ⏳Processed Image 🔜</h3>
+        <div style="text-align:center; background-color:#B2DFDB; padding:10px; border-radius:8px;">
+            <h3 style="color:#006666;">↻ ⏳ Processed Image 🔜</h3>
         </div>
         """,
         unsafe_allow_html=True
@@ -57,6 +72,3 @@ if uploaded_file:
             file_name="processed.png",
             mime="image/png"
         )
-
-
-
