@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image, ImageEnhance
 
-st.set_page_config(page_title="🎨 Pic Perfect : Online Image Processing", page_icon="✨")
+st.set_page_config(page_title="🎨 Pic Perfect:Online Image Processing", page_icon="✨")
 
 st.markdown(
     """
@@ -57,3 +57,4 @@ if uploaded_file:
             file_name="processed.png",
             mime="image/png"
         )
+
