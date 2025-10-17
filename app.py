@@ -23,7 +23,7 @@ st.markdown(
     <div style="text-align:center; background-color:#B2DFDB; padding:20px; border-radius:10px;">
         <h1 style="color:#006666;">🎨 Pic Perfect</h1>
         <p style="font-size:18px; color:#004C4C;">
-            Upload, edit & enhance your images with ease 🌿
+            Upload,edit & enhance your images with ease🌿
         </p>
     </div>
     """,
@@ -72,3 +72,4 @@ if uploaded_file:
             file_name="processed.png",
             mime="image/png"
         )
+
