@@ -8,7 +8,7 @@ st.markdown(
     <div style="text-align:center; background-color:#E8F5E9; padding:20px; border-radius:10px;">
         <h1 style="color:#2E7D32;">🎨 Image Enhancer Studio</h1>
         <p style="font-size:18px; color:#1B5E20;">
-            Upload, edit & enhance your images with ease 🌿
+            Upload, edit & enhance your images with ease🌿
         </p>
     </div>
     """,
@@ -57,4 +57,5 @@ if uploaded_file:
             file_name="processed.png",
             mime="image/png"
         )
+
 
