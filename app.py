@@ -13,10 +13,6 @@ st.markdown(
             color: #004C4C !important;
             font-weight: bold;
         }
-        .grayscale-text {
-            color: #008000; /* green */
-            font-weight: bold;
-        }
     </style>
     """,
     unsafe_allow_html=True
@@ -43,9 +39,7 @@ if uploaded_file:
     brightness = st.slider("☀ Brightness", 0.0, 2.0, 1.0)
     contrast = st.slider("🌓 Contrast", 0.0, 2.0, 1.0)
     sharpness = st.slider("✏ Sharpness", 0.0, 2.0, 1.0)
-
-    st.markdown('<span class="grayscale-text">⚪ Convert to Grayscale</span>', unsafe_allow_html=True)
-    grayscale = st.checkbox(" ", key="grayscale_checkbox")
+    grayscale = st.checkbox("⚪ Convert to Grayscale")
 
     enhancer = ImageEnhance.Brightness(image)
     img = enhancer.enhance(brightness)
